@@ -11,18 +11,25 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    // agar tampilan bisa discroll jika melebihi view
     return SingleChildScrollView(
+      // memastikan elemen tidak tertutup ui lain
       child: SafeArea(
+        // mengatur widget secara vertikal
         child: Column(
+          // memulai elemen dari arah kiri
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Dashboard total income dan expense
+            // menambahkan jarak disekitar widget
             Padding(
               padding: const EdgeInsets.all(16),
               child: Container(
                 child: Row(
+                  // mengatur jarak elemen secara horizontal
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    // membuat elemen income sebelah kiri
                     Row(
                       children: [
                         Container(
@@ -53,6 +60,8 @@ class _HomePageState extends State<HomePage> {
                         )
                       ],
                     ),
+
+                    // membuat elemen expense sebelah kanan
                     Row(
                       children: [
                         Container(
@@ -85,6 +94,7 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
+                // lebar widget akan mengisi seluruh ruang
                 width: double.infinity,
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -102,13 +112,18 @@ class _HomePageState extends State<HomePage> {
                   style: GoogleFonts.montserrat(
                       fontSize: 13, fontWeight: FontWeight.bold),
                 )),
+
             // List Transaksi
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Card(
+                // memberikan efek bayangan pada widget
                 elevation: 2,
+                // Widget yang menyajikan item daftar dengan judul, subtitle, dan ikon.
                 child: ListTile(
+                  // menambahkan widget di sisi kanan (akhir)
                   trailing: Row(
+                    // mengatur jarak widget secara horizontal sesuai kebutuhan
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.delete),
