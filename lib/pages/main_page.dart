@@ -1,5 +1,6 @@
 import 'package:calendar_appbar/calendar_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:money_tracker_app/pages/home_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -13,7 +14,9 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CalendarAppBar(
+        backButton: false,
         accent: Colors.pink,
+        locale: 'id',
         onDateChanged: (value) => print(value),
         firstDate: DateTime.now().subtract(Duration(days: 140)),
         lastDate: DateTime.now(),
@@ -23,6 +26,7 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.pink,
         child: Icon(Icons.add),
       ),
+      body: HomePage(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
           child: Row(
