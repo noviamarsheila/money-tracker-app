@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:money_tracker_app/pages/home_page.dart';
 import 'package:money_tracker_app/pages/category_page.dart';
+import 'package:money_tracker_app/pages/transaction_page.dart';
 
 // widget memliki status yang dapat diubah
 class MainPage extends StatefulWidget {
@@ -55,7 +56,14 @@ class _MainPageState extends State<MainPage> {
       floatingActionButton: Visibility(
         visible: (currentIndex == 0) ? true : false,
         child: FloatingActionButton(
-          onPressed: () {},
+          // ketika diklik mengarah ke halaman transaction
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(
+                  builder: (context) => TransactionPage(),
+                ))
+                .then((value) => {setState(() {})});
+          },
           backgroundColor: Colors.pink,
           child: Icon(Icons.add),
         ),
